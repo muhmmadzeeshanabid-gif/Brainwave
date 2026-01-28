@@ -2,15 +2,11 @@ import { benefits } from "../constants";
 import Heading from "./Heading";
 import Section from "./Section";
 import Arrow from "../assets/svg/Arrow";
-import ClipPath from "../assets/svg/ClipPath";
 import { GradientLight } from "../constants/design/Benefits";
 
 const Benefits = () => {
   return (
     <Section id="features">
-      {/* SVG defs MUST be rendered once & before usage */}
-      <ClipPath />
-
       <div className="container relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
