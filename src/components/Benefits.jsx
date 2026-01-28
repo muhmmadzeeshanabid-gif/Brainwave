@@ -4,7 +4,7 @@ import Section from "./Section";
 import Arrow from "../assets/svg/Arrow";
 import ClipPath from "../assets/svg/ClipPath";
 import { GradientLight } from "../constants/design/Benefits";
-import benefitCard1 from "../../src/assets/benefits/card-1.svg";
+import benefitCard1 from "/src/assets/benefits/card-1.svg";
 
 const Benefits = () => {
   return (
