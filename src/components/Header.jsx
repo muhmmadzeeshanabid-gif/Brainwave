@@ -73,9 +73,9 @@ const Header = () => {
         >
           New account
         </a>
-        <div className="hidden lg:flex mr-8">
-          <Button href="#login">Sign in</Button>
-        </div>
+        <Button className="hidden  lg:flex" href="#login">
+          Sign in
+        </Button>
 
         <Button
           className=" ml-auto lg:hidden"
