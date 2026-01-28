@@ -8,8 +8,7 @@ import { GradientLight } from "../constants/design/Benefits";
 const Benefits = () => {
   return (
     <Section id="features">
-      {/* SVG ClipPath MUST be rendered ONCE at the top level, outside of maps */}
-      {/* This ensures the clipPath definitions are available globally in production */}
+      {/* SVG defs MUST be rendered once & before usage */}
       <ClipPath />
 
       <div className="container relative z-2">
@@ -24,14 +23,10 @@ const Benefits = () => {
               key={item.id}
               className="relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem] overflow-hidden"
               style={{
-                // Use absolute public path or import for production-safe image loading
-                backgroundImage: item.backgroundUrl
-                  ? `url(${item.backgroundUrl})`
-                  : "none",
-                backgroundSize: "100% 100%",
+                backgroundImage: `url(${item.backgroundUrl})`,
               }}
             >
-              {/* Card Content Layer - above clipped background */}
+              {/* content */}
               <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
                 <h5 className="h5 mb-5">{item.title}</h5>
                 <p className="body-2 mb-6 text-n-3">{item.text}</p>
@@ -50,19 +45,14 @@ const Benefits = () => {
                 </div>
               </div>
 
-              {/* Gradient Light Overlay - only for special cards */}
+              {/* gradient light */}
               {item.light && <GradientLight />}
 
-              {/* Inner Clipped Background - creates the "border" effect via clipPath */}
-              {/* z-1 ensures this is below content (z-2) but above outer border */}
+              {/* inner clipped background (border safe) */}
               <div
                 className="absolute inset-0.5 bg-n-8 z-1 overflow-hidden"
-                style={{
-                  // clipPath creates the rounded border effect in production
-                  clipPath: "url(#benefits)",
-                }}
+                style={{ clipPath: "url(#benefits)" }}
               >
-                {/* Optional: Hover image overlay inside clipped area */}
                 <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
                   {item.imageUrl && (
                     <img
