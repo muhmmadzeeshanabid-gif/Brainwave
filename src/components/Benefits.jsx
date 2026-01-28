@@ -47,7 +47,10 @@ const Benefits = () => {
               {/* inner clipped background (border safe) */}
               <div
                 className="absolute inset-0.5 bg-n-8 z-1 overflow-hidden"
-                style={{ clipPath: "url(#benefits)" }}
+                style={{
+                  clipPath:
+                    "path('M8% 0 H92% C97% 0 100% 6% 100% 12% V88% C100% 94% 97% 100% 92% 100% H8% C3% 100% 0 94% 0 88% V12% C0 6% 3% 0 8% 0 Z')",
+                }}
               >
                 <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
                   {item.imageUrl && (
