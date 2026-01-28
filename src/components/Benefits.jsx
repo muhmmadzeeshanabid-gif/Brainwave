@@ -18,12 +18,12 @@ const Benefits = () => {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
-          {benefits.map((item, index) => (
+          {benefits.map((item) => (
             <div
               key={item.id}
               className="relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem] overflow-hidden"
               style={{
-                backgroundImage: `url("/src/assets/benefits/card-1.svg")`,
+                backgroundImage: `url(${item.backgroundUrl})`,
               }}
             >
               {/* content */}
